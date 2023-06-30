@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Website Comment Chrome Extension",
+  "description": "This extension allows users to add comments to websites, providing a platform for users to save their thoughts, opinions, and feedback directly on the web pages.",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "<all_urls>"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
